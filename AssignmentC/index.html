@@ -27,10 +27,10 @@
         const outputText = document.getElementById('redactOutput');
 
         function redactText() {
-            let splitText = textInput.value //save input word into a variable
+            let splitText = textInput.value.toLowerCase() //save input word into a variable
             const scrambledText = redactWord.value.split(" "); //split words to be redacted separated by a space
             for (word of scrambledText) {
-                splitText = splitText.replace(word,"****")
+                splitText = splitText.replace(word.toLowerCase(),"****")
             }
             outputText.innerHTML = splitText;
         }
