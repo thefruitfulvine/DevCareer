@@ -1,0 +1,25 @@
+### Valid request with token
+GET http://localhost:5016/api/users
+Authorization: Bearer valid-token
+
+### Invalid token
+GET http://localhost:5016/api/users
+Authorization: Bearer wrong-token
+
+### Missing token
+GET http://localhost:5016/api/users
+
+### Trigger error (non-existent user)
+GET http://localhost:5016/api/users/999
+Authorization: Bearer valid-token
+
+### Create user (valid)
+POST http://localhost:5016/api/users
+Authorization: Bearer valid-token
+Content-Type: application/json
+
+{
+  "name": "Ada",
+  "email": "ada@techhive.com",
+  "password": "securePass123"
+}
